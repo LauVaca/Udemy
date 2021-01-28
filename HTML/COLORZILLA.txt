@@ -1,0 +1,1 @@
+Extension de chrome que me dice el codigo de cualquier color que quiera que sallga en una pagina web

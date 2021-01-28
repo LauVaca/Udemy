@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="es">
+<!lang dice en que idioma esta>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!viewport para que se adapte a otros dispositivos>
+
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+            <! hace referencia al paquete o fichero de bootstrap que tmb puedo descargarlo en la compu y usarlo, integrity verifica que sea correcto>
+                <title>Landing Page</title>
+
+                <style type="text/css">
+                    body {
+                        margin: 0;
+                        padding: 0;
+                    }
+
+                    .jumbotron {
+                        background-color: #FEF0BF;
+                        text-align: center;
+                    }
+
+                    #email {
+                        width: 300px;
+                        margin-right: 10px;
+                    }
+
+                    .titulo1 {
+                        text-align: center;
+                        margin: 30px auto;
+                    }
+
+                    .titulo2 {
+                        text-align: center;
+                        margin-bottom: 40px;
+                    }
+
+                    .card {
+                        position: relative;
+                        display: block;
+                        margin-bottom: .75rem;
+                        border: 1px solid lightgrey;
+                        border-radius: 10px;
+                        width: 216px;
+                        width: 100%;
+                    }
+
+                    .descarga {
+                        text-align: center;
+                        display: block;
+                    }
+
+                    footer {
+                        background-color: #FFA500;
+                        padding-top: 150px;
+                        margin-top: 150px;
+                        text-align: center;
+                        padding-bottom: 150px;
+                    }
+
+                    .card-img-top {
+                        width: 100%;
+                    }
+
+                </style>
+    </head>
+
+    <body data-spy="scroll" data-target="#navbar" data-offset="150">
+        <!--NAVBAR-->
+        <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light" id="navbar">
+            <a class="navbar-brand" href="#">Mi App</a>
+            <!--aca deberia ir el logo de la pagina con el link-->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#acercade">Acerca de</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#descargarapp">Descargar app</a></li>
+
+                </ul>
+                <!--EMAIL Y PSW-->
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="email" placeholder="Email" aria-label="Email">
+                    <input class="form-control mr-sm-2" type="password" placeholder="Password" aria-label="Password">
+                    <button class="btn btn-primary my-sm-0" type="button">Login</button>
+                </form>
+            </div>
+        </nav>
+
+        <!--JUMBOTRON-->
+        <div class="jumbotron">
+            <h1 class="display-3" id="jumbotron">Consigue tu objetivo!!</h1>
+            <p class="lead">Esta es la razon por la que deberias descargarte esta app!!</p>
+            <hr class="m-y-2">
+            <!--hace la linea separadora en todo el ancho de la pagina-->
+            <p>¿Deseas conocer más? Suscríbete a nuestra lista de correo!</p>
+            <form>
+                <div class="form-row" style="display: inline-flex;">
+                    <div class="col-auto">
+                        <label class="sr-only" for="inlineFormInputGroup">Email</label>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">@</div>
+                            </div>
+                            <input type="text" class="form-control" id="email" placeholder="Tu email">
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-primary mb-2">Suscríbete</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!--TITULO Y SUBTITULO-->
+        <h1 class="titulo1" id="acercade">Porque esta app es impresionante</h1>
+        <h5 class="titulo2">Resumen, otra vez, porque tu app es impresionante</h5>
+
+        <!--TARJETAS CON IMAGENES-->
+        <div class="container">
+            <div class="card-deck">
+                <div class="card">
+                    <img src="C:\Users\Lauri\Desktop\Trabajos\Cursos\UDEMY\BOOTSTRAP/conmiapp.jpg" class="card-img-top" alt="img1">
+                    <div class="card-body">
+                        <h5 class="card-title">Imagen 1</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="C:\Users\Lauri\Desktop\Trabajos\Cursos\UDEMY\BOOTSTRAP/conmiapp.jpg" class="card-img-top" alt="img2">
+                    <div class="card-body">
+                        <h5 class="card-title">Imagen 2</h5>
+                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="C:\Users\Lauri\Desktop\Trabajos\Cursos\UDEMY\BOOTSTRAP/conmiapp.jpg" class="card-img-top" alt="img3">
+                    <div class="card-body">
+                        <h5 class="card-title">Imagen 3</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--FOOTER-->
+        <footer>
+            <h2 id="descargarapp" class="descarga">DESCARGA LA APP</h2>
+            <p class="lead">Descarga la app y consigue tus objetivos</p>
+            <p>
+                <a href=""><img src="androidapp.png"></a>
+                <a href=""><img src="androidapp.png"></a>
+            </p>
+
+        </footer>
+
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <!--tienen que estar siosi en ese orden, jQuery primero y desp Bootstrap-->
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.7/js/tether.min.js" crossorigin="anonymous"></script>
+
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+
+        <script type="text/javascript">
+        </script>
+
+    </body>
+
+</html>

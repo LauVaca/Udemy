@@ -1,0 +1,13 @@
+<html>
+<HEAD>
+<SCRIPT LANGUAGE="JavaScript">
+function mi_alerta () {
+alert ("Este seria el mensaje de alerta desde boton!");
+}
+</SCRIPT>
+</HEAD>
+<BODY>
+<FORM>
+<input type=button value="Prueba la alerta" onClick="mi_alerta()">
+</FORM>
+</BODY>

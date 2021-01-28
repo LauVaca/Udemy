@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="es"><!lang dice en que idioma esta>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><!viewport para que se adapte a otros dispositivos>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous"><! hace referencia al paquete o fichero de bootstrap que tmb puedo descargarlo en la compu y usarlo, integrity verifica que sea correcto>
+
+      <title>Jumbo y aletas</title>
+      
+      <style type="text/css">
+      .fondorosa
+          {
+              background-color: mediumvioletred;
+              color: white;
+          }
+        .fondoverde
+          {
+              background-color: palegreen;
+              color: black;
+          }
+      </style>
+  </head>
+  <body>
+      <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark"> <!--el bg-light hace referencia al color de fondo, puedo cambiarle por ej por nombres que le asignan significado a los botones y el sticky-top para que se quede quieta cuando me desplazo para abajo sin tapar al fondo-->
+          <a class="navbar-brand" href="#">Navbar</a> <!--aca deberia ir el logo de la pagina con el link-->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                  <li class="nav-item active">
+                      <a class="nav-link" href="#">Home
+                          <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">Link</a></li>
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Dropdown
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="#">Action</a>
+                          <a class="dropdown-item" href="#">Another action</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">Something else here</a>
+                      </div>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                  </li>
+              </ul>
+              <!--BUSCADOR EN LINEA-->
+              <form class="form-inline my-2 my-lg-0">
+                  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              </form>
+          </div>
+      </nav>
+      
+      
+      <!--Jumbo-->
+      <div class="container">
+        <div class="jumbotron">
+          <h1 class="display-4">Hello, world!</h1>
+          <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+          <hr class="my-4">
+          <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+          <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+        </div>
+
+      </div>
+      
+      <!--Alertas de colores-->
+      <div class="container">
+        <div class="alert alert-primary" role="alert">
+          A simple primary alert—check it out!
+        </div>
+        <div class="alert alert-secondary" role="alert">
+          A simple secondary alert—check it out!
+        </div>
+        <div class="alert alert-success" role="alert">
+          A simple success alert—check it out!
+        </div>
+        <div class="alert alert-danger" role="alert">
+          A simple danger alert—check it out!
+        </div>
+        <div class="alert alert-warning" role="alert">
+          A simple warning alert—check it out!
+        </div>
+        <div class="alert alert-info" role="alert">
+          A simple info alert—check it out!
+        </div>
+        <div class="alert alert-light" role="alert">
+          A simple light alert—check it out!
+        </div>
+        <div class="alert alert-dark" role="alert">
+          A simple dark alert—check it out!
+        </div>
+          
+          <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      
+      </div>
+      
+        <!-- jQuery first, then Popper.js, then Bootstrap JS --><!tienen que estar siosi en ese orden, jQuery primero y desp Bootstrap>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+  </body>
+</html>

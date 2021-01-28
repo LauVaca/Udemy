@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Curso de JavaScript</title>
+        <script language="JavaScript">
+             function validar()
+             {
+                 var ok = true;
+ 
+                 if( document.getElementById("txt1").value == "" || document.getElementById("txt2").value == "" )
+                 {
+                     alert("Introduzca todos los datos");
+                     ok = false;
+                 }
+ 
+                 return ok;
+             }
+        </script>
+    </head>
+    <body>
+         <form id="form1" name="form1" method="post" action="form1.php" onsubmit="return validar();">
+            Nombre: <input type="text" id="txt1" name="txt1" />
+            Apellidos: <input type="text" id="txt2" name="txt2" />
+            <input type="submit" id="btnEnviar" name="btnEnviar" value="Enviar" />
+        </form>
+    </body>
+</html>

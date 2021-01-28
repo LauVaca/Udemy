@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif" rel="stylesheet"><!entro a google fonts y elijo la fuente que quiero usar y tambien copio el font family que esta en p2. Seria como una hoja de estilos en linea>
+        
+        <meta charset="utf-8"><!para que las palabras con acento no den error>
+        
+        <title>
+        Estilos de fuentes
+        </title>
+        
+        <style>
+           .p1 /* crea un estilo para todos los parrafos <p>*/
+            {
+                font-size: 300%;
+                font-family: "Courier New", Courier, monospace; /*si busco web safe fonts en w3school me aparecen los tipos de letras que puedp usar*/
+            }
+            
+            .p2
+            {
+                font-size: 300%;
+                font-family:'IBM Plex Serif', serif;
+            }
+            .bold
+            {
+                font-weight: bold;
+            }
+            .italic
+            {
+                font-style: italic;
+            }
+            a
+            {
+                text-decoration-line: none;
+                color:mediumvioletred;
+            }
+            a:hover
+            {
+                text-decoration: underline;
+                color: palevioletred;
+            }
+            
+            .cuadrado
+            {
+                width: 500px;
+                background-color: pink;
+            }
+            div
+            {
+                text-align: center;
+            }
+            
+            
+        </style>
+
+    </head>
+    
+    <body>
+        <p class="p1"> Estilo 1 </p>
+        <p class="p2"> Estilo 2</p>
+        <p class="bold"> Aqui hay mucho texto</p>
+        <p class="italic"> Hoy hace <span class="bold"> calor </span> pero va a llover</p>
+        <a href="desafio%20de%20cajas.html"> Desafio de cajas </a>
+        
+        <div class="cuadrado">
+            <p> Texto separado </p>
+            <p class="italic"> Texto separado </p>
+        </div>
+    </body>
+
+
+
+</html>

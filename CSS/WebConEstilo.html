@@ -1,0 +1,92 @@
+<html>
+<head>
+    <meta charset="utf-8"><!para que las palabras con acento no den error>
+    <title>
+    Web con estilo
+    </title>
+    
+    <style type="text/css"> 
+        .rojo 
+        {
+          color:crimson;  
+        }
+        
+        .violeta
+        {
+            color:blueviolet;
+        }
+       
+        .grande
+        {
+            font-size:400%;
+        }
+        
+        .texto
+        {
+            font-size: 200%;
+        }
+        
+        .subrayado
+        {
+            text-decoration:underline
+        }
+        
+        .claseNoFlotante
+        {
+             clear:both
+        }
+        
+        /* en margin va de arriba derecha abajo izquierda, como el reloj -- padding me permite separar el texto de adentro de los bordes*/
+        /* como tengo width y padding, voy a tener 200 de ancho mas 10 a la derecha y 30 a la izquierda
+        #primeraSeccion
+        {
+            color:darkslateblue;
+            background-color: bisque;
+            width:200px;
+            text-align: center;
+            margin:100px 50px 20px 400px;
+            padding: 10px 30px;
+           
+        }
+        
+        /*o se pueden especificar uno por uno los margenes*/
+        #segundaSeccion
+        {
+            color:darkorchid; 
+            background-color:lightgreen;
+            width:300px;
+            text-align: center;
+            margin-bottom: 50px;
+            margin-left: 500px;
+            margin-top: 100px;
+            margin-right: 5px;
+            float: right;
+        }
+        
+        /*lo que hace esto es que me aparezca en margen 0 de la ventana y el texto en margen 0 del cuadrado de color, lo mismo lo puedo hacer para los parrafos <p> */
+        body  
+        {
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+    </head>
+    
+    <body>
+        <div id="primeraSeccion">
+            <h1 class="subrayado"> CSS ES GENIAL </h1>
+            <p > Sos el arquitecto de tu propia felicidad </p>
+        </div>
+        
+        <div id="segundaSeccion">
+            <p class="texto"> Ríe. </p>
+            <p> Baila. </p>
+        </div>
+     
+        <p class="claseNoFlotante"> Baila. </p>
+    
+    </body>
+
+
+
+</html>
