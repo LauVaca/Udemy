@@ -1,0 +1,110 @@
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<title>Proyecto con JavaScript</title>
+
+		<!-- Estilos CSS -->
+		<link rel="stylesheet" type="text/css" href="css.css">
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/responsive.css" />
+
+		<!-- jQuery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="js/jquery-ui/jquery-ui.min.css" />
+		<link rel="stylesheet" href="js/jquery-ui/jquery-ui.structure.min.css" />
+		<link rel="stylesheet" href="js/jquery-ui/jquery-ui.theme.min.css" />
+		<script type="text/javascript" src="js/jquery-ui/jquery-ui.min.js"></script>
+
+		<!-- Plugin validacion -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+
+		<!-- Mis Scripts -->
+		<script type="text/javascript">
+			$(document).ready(function(){
+
+			// Validación
+			if(window.location.href.indexOf('formprueba') > -1){
+
+				$("form input[name='fechaNac']").datepicker({
+					dateFormat: 'dd/mm/yyyy'
+				});
+
+				$.validate({
+					lang: 'es',
+					errorMessagePosition: 'top',
+					scrollToTopOnError: true
+				});
+
+			}
+		});
+
+	</script>
+	</head>
+
+<body>
+	
+	<!-- FORMULARIO -->
+	<h1 class="formularioTitulo">Formulario de inscripción</h1>
+	
+	<form class="contenedorForm" id="formInsc">
+		<div class="form-row">
+			<div class="form-group col-md-6 nombre">
+				<label class="labelForm">Nombre</label>
+				<input type="text" id="nombre" name="nombre" placeholder="   Nombre" class="form-control inputNombre" data-validation="alphanumeric">
+			</div>
+			<div class="form-group col-md-6 apellido">
+				<label class="labelForm">Apellido</label>
+				<input type="text" id="apellido" name="apellido" placeholder="   Apellido" class="form-control inputApellido" data-validation="alphanumeric">
+			</div>
+		</div>
+		<div class="form-row">
+			<div class="form-group col-md-2 edad">	
+				<label class="labelForm">Edad</label>
+				<select class="form-control mr-sm-2" data-validation="required">
+					<option value="15">15</option>
+					<option value="16">16</option>
+					<option value="17">17</option>
+					<option value="18">18</option>
+					<option value="mas">+18</option>
+				</select>
+			</div>
+			<div class="form-group col-md-4 nombre">
+				<label class="labelForm">Nº documento</label>
+				<input type="text" id="nroDoc" name="nroDoc" placeholder="   Nº documento" class="form-control inputDocumento" data-validation="number length" data-validation-length="max8">
+			</div>
+			<div class="form-group col-md-6 fechaNac">	
+				<label class="labelForm">Fecha Nacimiento</label>
+				<input type="date" id="fechaNac" name="fechaNac" placeholder="dd/mm/yyyy" class="form-control inputFechaNac inputForm" data-validation="date" data-validation-format="dd/mm/yyyy">
+			</div>
+		</div>
+		<div class="form-row">
+			<div class="form-group col-md-6 nroCelular">	
+				<label class="labelForm">Nº celular</label>
+				<input type="tel" id="nroCel" name="nroCelular" placeholder="   3510000000" class="form-control inputNroCelular inputForm" data-validation="number">
+			</div>
+			<div class="form-group col-md-6 mail">	
+				<label class="labelForm">Mail</label>
+				<input type="mail" id="mail" name="mail" placeholder="   usuario@gmail.com" class="form-control inputMail inputForm" data-validation="email">
+			</div>
+		</div>
+		<div class="form-row">
+			<div class="form-group col-md-6 nroCelularEmergencia">	
+				<label class="labelForm">Nº celular emergencia</label>
+				<input type="tel" id="nroCelEmergencia" name="nroCelularEmergencia" placeholder="   3510000000"class="form-control inputCelEmerg inputForm" data-validation="number">
+			</div>
+			<div class="form-group col-md-6 nombreTutor">	
+				<label class="labelForm">Nombre Tutor</label>
+				<input type="text" id="idnombretutor" name="nombreTutor" placeholder="   Nombre tutor" class="form-control inputNombreTutor inputForm" data-validation="alphanumeric">
+			</div>
+		</div>
+		
+		<div class="botonInscribir">
+			<button type="submit" class="btn btn-celeste" value="" >Enviar</button>
+			<!-- <span class="help-block form-error">El valor proporcionado no es un número válido</span> -->
+		</div>
+	</form>
+
+	
+</body>
+</html>

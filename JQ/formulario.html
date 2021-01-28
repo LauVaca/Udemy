@@ -1,0 +1,149 @@
+<html>
+<head>
+    
+    <meta charset="utf-8">
+    <title>Formulario</title>
+    <script src="jquery-ui/external/jquery/jquery.js"></script>
+        <script src="jquery-ui/jquery-ui.min.js"></script>
+        <link rel="stylesheet" href="jquery-ui/jquery-ui.css">
+
+  
+    <style type="text/css">
+        body
+        {
+            font-family: sans-serif;
+            font-size: 18px;
+        }
+        input
+        {
+            height: 20px;
+            padding: 10px 10px 12px 5px;
+            font-size: 15px;
+            border-radius: 5px;
+            border:1px solid grey;
+        }
+        label
+        {
+            position: relative;
+            width: 220px;
+            float: left;
+            text-align: right;
+            margin-right: 20px;;
+        }
+        .contenedor
+        {
+            width: 550px;
+            margin: 0 auto;
+        }
+        .formulario
+        {
+            margin-bottom: 10px;
+            
+        }
+        #enviar
+        {
+            margin-left: 324px;
+            height: 40px;
+            width: 125px;
+        }
+        
+        #mensajeCamposVacios
+        {
+           color: red;
+            font-size: 110%;
+        }
+    
+    
+    </style>
+    
+</head>
+    
+<body>
+    <div class="contenedor">
+        <div id="mensajeComposVacios"></div>
+        <div class="formulario">
+            <label for="email">Ingrese su email</label>
+            <input type="text" name="email" id="email" placeholder="xxxx@gmail.com">
+        </div>
+        <div class="formulario"> 
+            <label for="tel">Ingrese su telefono</label>
+            <input type="text" name="tel" id="tel" placeholder="Numero">
+        </div>
+        <div class="formulario">
+            <label for="pass">Ingrese su contraseña</label>
+            <input type="password" name="pass" id="pass" placeholder="********">
+        </div>
+        <div class="formulario">
+            <label for="confirmarpass">Confirme su contraseña</label>
+            <input type="password" name="confirmarpass" id="confirmarpass" placeholder="********">
+        </div>
+        
+        <div class="formulario">
+            <input type="button" id="enviar" value="Enviar formulario">
+        </div>
+    
+        <div id="mensajeExito"></div>
+    </div>   
+    
+    <script type="text/javascript">
+        function isEmail(email) {
+              var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+              return regex.test(email);
+                // true si email encaja en la expresión regular
+            }
+        
+        $("#enviar").click(function(){
+            var campoVacio = "";
+            var mensajeError = "";
+            
+            //verificar que los campos no esten vacios
+            if ($("#email").val() == "")
+                {
+                    campoVacio = campoVacio + "Email<br>";
+                };
+            if ($("#tel").val() == "")
+                {
+                    campoVacio = campoVacio + "Telefono<br>";
+                };
+            if ($("#pass").val() == "")
+                {
+                    campoVacio = campoVacio + "Contraseña<br>";
+                };
+            if ($("#confirmarpass").val() == "")
+                {
+                    campoVacio = campoVacio + "Confirmar contraseña<br>";
+                };
+            
+            // Otro tipo de validaciones
+                if (isEmail($("#email").val()) == false)
+                {
+                        mensajeError = mensajeError+"<p>Tu dirección de correo no es válida</p>";
+                };
+                
+                if ($.isNumeric($("#tel").val()) == false)
+                {
+                    mensajeError = mensajeError+"<p>Tu teléfono no es numérico</p>";
+                };
+                
+                if ($("#pass").val() != $("#confirmarpass").val())
+                {
+                     mensajeError = mensajeError+"<p>¡Las contraseñas no coinciden!</p>";       
+                };
+                
+                if (campoVacio !=""){
+                    mensajeError = "<p>Los siguientes campos están vacios:</p>" + campoVacio+mensajeError;
+                };
+                if (mensajeError!="")
+                    {
+                        $("#mensajeCamposVacios").html(mensajeError);    
+                    }
+                else
+                    {
+                        $("#mensajeExito").html("<p>Su formulario ha sido enviado</p>");
+                    };
+            });
+        
+        
+    </script>
+</body>
+</html>

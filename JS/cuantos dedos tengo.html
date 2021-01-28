@@ -1,0 +1,36 @@
+<html>
+<head>
+    
+    <meta charset="utf-8">
+    <title> Cuantos dedos tengo </title>
+    
+</head>
+    
+<body>
+    <h2>Adivinar el numero</h2>
+    <input type="text" id="numero" placeholder="Ingrese numero">
+    <button id="compruebaNumero">Comprobar</button>
+    
+    <script type="text/javascript">
+        document.getElementById("compruebaNumero").onclick = function ()
+        {
+            var numeroAleatorio = Math.random()*6;
+        //numero entre 0 y 5.99999 con el *6, el 6 no se incluye
+        numeroAleatorio =  Math.floor(numeroAleatorio);
+        //redondea los numeros aleatorios, entre 0 y 5
+            var numeroUs= document.getElementById("numero").value;
+            //obtiene el numero en el textbox
+            if (numeroAleatorio == numeroUs)
+                {
+                alert("Acertaste");
+                }
+            else
+                {
+                    alert("No acertaste. El numero era " + numeroAleatorio);
+                }
+        }
+        
+    </script>  
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<html>
+<head>
+    
+    <meta charset="utf-8">
+    <title>AJAX</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+    
+</head>
+    
+<body>
+    
+    <script type="text/javascript">
+        //me permite obetener los datos de un fichero externo de texto y mostrar como un cartelito
+        $.get("cartel.txt", function(data){
+            alert(data);
+        });
+        
+        $.ajax("cartel.txt").done(function(data){
+            alert(data);
+        }).fail(function(){
+            alert("Error");
+        });
+    
+    </script>
+    
+
+</body>
+</html>

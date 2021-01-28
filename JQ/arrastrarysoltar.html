@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jQuery</title>
+        <script src="jquery-ui/external/jquery/jquery.js"></script>
+        <script src="jquery-ui/jquery-ui.min.js"></script>
+        <link rel="stylesheet" href="jquery-ui/jquery-ui.css">
+
+  <style type="text/css">
+            #cuadradoazul {
+                width: 100px;
+                height: 100px;
+                background-color: blue;
+            }
+            #cuadradorojo {
+                width: 400px;
+                height: 400px;
+                background-color: red;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div id="cuadradoazul"></div>
+        <div id="cuadradorojo"></div>
+
+        <script type="text/javascript">
+            $("#cuadradoazul").draggable();
+            $("#cuadradorojo").droppable({
+                drop: function( event, ui ) {
+                    $(this).css("backgroundColor", "pink");
+                    alert('Lo soltaste dentro del rojo');
+                    
+                }
+            });
+        </script>
+    </body>
+</html>

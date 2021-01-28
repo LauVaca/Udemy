@@ -1,0 +1,46 @@
+<html>
+<head>
+    
+    <meta charset="utf-8">
+    <title>JQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+    <style type="text/css">
+        .circulo
+        {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: antiquewhite;
+        }
+        
+    </style>
+</head>
+    
+<body>
+    <div class="circulo"></div>
+    <script type="text/javascript">
+        
+        $(".circulo").click(function()
+                            {
+            //en el animate pongo las propiedades que quiero cambiar, del css, y la duracion del cambio, puedo poner otras cosas mas que me las lista despues de escribir animate
+            //ademas a dif del css las prop no llevan - sino que la palabra despues de eso empieza con mayus
+            
+            $(this).animate(
+                {
+                    width: "300px",
+                    height: "300px",
+                    marginLeft:"100px",
+                    marginTop:"100px",
+                },2000,"linear", function()
+            {
+                $(this).css("background-color", "pink")
+            });
+        });
+    
+    
+    </script>
+    
+
+</body>
+</html>

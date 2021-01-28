@@ -1,0 +1,26 @@
+<html>
+<head>
+    
+    <meta charset="utf-8">
+    <title> Javascript </title>
+    
+</head>
+    
+<body>
+    <input id="entradaUs" type="text" placeholder="Usuario">
+    <p id="inicioSesion"> Iniciar sesion </p>
+    <button id="mostrarmsj"> Login </button>
+    
+    <script type="text/javascript">
+        document.getElementById("mostrarmsj").onclick =
+            function ()
+        {
+           var entrada = "";
+            entrada = document.getElementById("entradaUs").value;
+            document.getElementById("inicioSesion").innerHTML = "Bienvenido " + entrada;
+        }
+        
+    </script>  
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<html>
+<head>
+    
+    <meta charset="utf-8">
+    <title>Bucles for</title>
+    
+</head>
+    
+<body>
+    <div id="tweetsDiv">
+    
+    </div>
+    <script type="text/javascript">
+        var tweets = ["Hola", "Holis", "Holiwis"];
+        var cadenaTweets="";
+        for (var i= 0; i<tweets.length; i++)
+            {
+                cadenaTweets = cadenaTweets + "<p>" + tweets[i] + "</p>";
+            }
+        document.getElementById("tweetsDiv").innerHTML = cadenaTweets;
+    </script>  
+
+</body>
+</html>

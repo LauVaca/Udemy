@@ -1,0 +1,33 @@
+<html>
+<head>
+    
+    <meta charset="utf-8">
+    <title> Javascript </title>
+    
+</head>
+    
+<body>
+    <input type="text" id="text" placeholder="Nombre usuario">
+    <button id="boton"> Comprobar </button>
+    <script type="text/javascript">
+        document.getElementById("boton").onclick = 
+        function ()
+        {
+            var nombre="lau";
+            var nombreUs;
+            
+            nombreUs = document.getElementById("text").value;
+            if (nombreUs==nombre)
+                {
+                alert("El nombre ingresado es correcto");
+                }
+            else
+                {
+                alert("El nombre ingresado no es correcto");
+                }
+        }
+        
+    </script>  
+
+</body>
+</html>

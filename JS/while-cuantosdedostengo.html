@@ -1,0 +1,53 @@
+<html>
+<head>
+    
+    <meta charset="utf-8">
+    <title>Ciclo while</title>
+    
+</head>
+    
+<body>
+    <h2>Cuantos dedos tengo?</h2>
+    
+    <!OPCION INGRESANDO POR TECLADO 
+    input type="text" id="numeroDedos" placeholder="Ingrese un numero"!>
+    
+    <p>
+        <select id="numeroDedos">
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+    </p>
+    <button id="boton"> Adivinar </button>
+    
+    <script type="text/javascript">
+        document.getElementById("boton").onclick= function()
+        {
+            var numero = document.getElementById("numeroDedos").value;
+            var acierto = false; //por defecto la maquina no acierta
+            var numeroIntentos = 1;
+            
+            while (acierto == false)
+                {
+                    var numeroMaquina = Math.random();
+                    numeroMaquina = numeroMaquina * 6;
+                    numeroMaquina = Math.floor(numeroMaquina);
+                    if (numeroMaquina == numero)
+                    {
+                        acierto = true;
+                        alert("Acertó. El numero era " +numeroMaquina+ ". Me costo " +numeroIntentos+ " intentos");
+                    }
+                    else
+                    {
+                        numeroIntentos =  numeroIntentos + 1;
+                    }
+                }
+        }
+    </script>  
+
+</body>
+</html>

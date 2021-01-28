@@ -1,0 +1,46 @@
+<html>
+<head>
+    
+    <meta charset="utf-8">
+    <title>JQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+    <style type="text/css">
+        .circulo
+        {
+            border-radius: 50%;
+            background-color: antiquewhite;
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+        }
+        
+        .cuadrado
+        {
+            background-color: violet;
+            width: 100px;
+            height: 100px;
+            margin:10px;
+        }
+        
+    
+    </style>
+</head>
+    
+<body>
+    <div class="circulo"></div>
+    <div class="cuadrado"></div>
+    
+    
+    <script type="text/javascript">
+        //si pongo .circulo en vez de div cuando clickee el circulo me aparece el msj. Y asi con el elemento que ponga. el div aplicaria a todos los divs que tenga
+        $("div").click(function()
+                           {
+            alert("Hizo click");
+        })
+        
+        
+    </script>
+
+</body>
+</html>

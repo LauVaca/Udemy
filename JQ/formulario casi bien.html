@@ -1,0 +1,146 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jQuery</title>
+        <script src="jquery-ui/external/jquery/jquery.js"></script>
+        <script src="jquery-ui/jquery-ui.min.js"></script>
+        <link rel="stylesheet" href="jquery-ui/jquery-ui.css">
+
+        <style type="text/css">
+        body
+        {
+            font-family: sans-serif;
+            font-size: 18px;
+        }
+        input
+        {
+            height: 20px;
+            padding: 10px 10px 12px 5px;
+            font-size: 15px;
+            border-radius: 5px;
+            border:1px solid grey;
+        }
+        label
+        {
+            position: relative;
+            width: 220px;
+            float: left;
+            text-align: right;
+            margin-right: 20px;;
+        }
+        .contenedor
+        {
+            width: 550px;
+            margin: 0 auto;
+        }
+        .formulario
+        {
+            margin-bottom: 10px;
+            
+        }
+        #enviar
+        {
+            margin-left: 324px;
+            height: 40px;
+            width: 125px;
+        }
+        
+        #mensajeCamposVacios
+        {
+           color: red;
+            font-size: 110%;
+        }
+    
+    </style>
+    </head>
+    
+    <body>
+        <div id="contenedor">
+            <div id="mensajeErrorCampos"></div>
+            <div class="elemento-formulario">
+                <!-- Email -->
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email" placeholder="Ej. nombre@dominio.com">
+            </div>
+            <div class="elemento-formulario">
+                <!-- Teléfono -->
+                <label for="telefono">Teléfono</label>
+                <input type="text" name="telefono" id="telefono" placeholder="Ej. 0123456789">
+            </div>
+            <div class="elemento-formulario">
+                <!-- Password -->
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password">
+            </div>
+            <div class="elemento-formulario">
+                <!-- Confirmar password -->
+                <label for="confirmarPass">Confirmar password</label>
+                <input type="text" name="confirmarPass" id="confirmarPass">
+            </div>
+            <div class="elemento-formulario">
+                <input type="submit" id="botonEnviar" value="Darse de alta">
+            </div>
+            <div id="mensajeExito"></div>
+
+        </div>
+        <script type="text/javascript">
+            function isEmail(email) {
+              var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+              return regex.test(email);
+                // true si email encaja en la expresión regular
+            }
+            
+            
+            $("#botonEnviar").click(function(){
+                var mensajeError="";
+                var campoVacio = "";
+                
+                // Validaciones campos vacios
+                
+                if ($("#email").val()=="")
+                {
+                    campoVacio = campoVacio + "Email<br>";        
+                }
+                if ($("#telefono").val()=="")
+                {
+                    campoVacio = campoVacio + "Teléfono<br>";        
+                }
+                if ($("#password").val()=="")
+                {
+                    campoVacio = campoVacio + "Password<br>";        
+                }
+                if ($("#confirmarPass").val()=="")
+                {
+                    campoVacio = campoVacio + "Confirmación de password<br>";        
+                }
+                // Otro tipo de validaciones
+                if (isEmail($("#email").val()) == false)
+                {
+                        mensajeError = mensajeError+"<p>Tu dirección de correo no es válida</p>";
+                }
+                
+                if ($.isNumeric($("#telefono").val()) == false)
+                {
+                    mensajeError = mensajeError+"<p>Tu teléfono no es numérico</p>";
+                }
+                
+                if ($("#password").val() != $("#confirmarPass").val())
+                {
+                     mensajeError = mensajeError+"<p>¡Las contraseñas no coinciden!</p>";       
+                }
+                
+                if (campoVacio !=""){
+                    mensajeError = "<p>Los siguientes campos están vacios:</p>" + campoVacio+mensajeError;
+                }
+                if (mensajeError!="")
+                    {
+                        $("#mensajeErrorCampos").html(mensajeError);    
+                    }
+                else
+                    {
+                        $("#mensajeExito").html("<p>¡Enhorabuena! Enviando datos...</p>");
+                    }
+            })
+        </script>
+    </body>
+</html>

@@ -1,0 +1,166 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jQuery</title>
+        <script src="jquery-ui/external/jquery/jquery.js"></script>
+        <script src="jquery-ui/jquery-ui.min.js"></script>
+        <script src="jquery-ui/jquery-ui.js"></script>
+        
+        <link rel="stylesheet" href="jquery-ui/jquery-ui.css">
+        
+        <style type="text/css">
+            body
+            {
+                margin: 0;
+                padding: 0;
+                font-family: system, "Helvetica Neue", Helvetica, Arial; 
+            }
+            
+            .barraPrincipal
+            {
+                width: auto;
+                height: 40px;
+                background-color: rgb(237, 237, 237);
+                border-bottom-color: grey;
+                border-bottom-width: 1px;
+                border-bottom-style: solid;
+                border-bottom-color: rgb(191, 191, 191);
+                font-size: 12px;
+            } 
+            
+            .logo
+            {
+                float: left;
+                font-weight: bold;
+                font-size: 130%;
+                padding: 11px 5px;
+            }
+            
+            .contenedorBotones
+            {
+                margin: 0 auto;
+                width: 300px;
+            }
+            
+            .botones
+            {
+                border: 1px solid rgb(191, 191, 191);
+                float: left;
+                border-right: none; 
+                padding: 10px 12px;
+                margin-top: 2px;
+            }
+            
+            
+            #html
+            {
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
+            }
+            #output
+            {
+                border-right:1px solid rgb(191, 191, 191);
+                border-top-right-radius: 5px;
+                border-bottom-right-radius: 5px;
+            }
+            
+            .botonMarcado
+            {
+                background-color:#E4E4E4;
+            }
+            
+            .activo
+            {
+               background-color: #F5F9FF; 
+            }
+            
+            textarea
+            {
+                resize: none;
+                border-top: none;
+                border-color: rgb(191, 191, 191);
+            }
+            
+            .panel
+            {
+                float: left;
+                width: 50%;
+                border-left: none;
+            }
+            
+            iframe
+            {
+                border: none;
+            }
+            
+            .oculto
+            {
+                display: none;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="barraPrincipal">
+            <div class="logo">CodePlayer</div>
+            <div class="contenedorBotones">
+                <div class="botones activo" id="html">HTML</div>
+                <div class="botones" id="css">CSS</div>
+                <div class="botones" id="js">JavaScript</div>
+                <div class="botones activo" id="output">Output</div>
+            </div>
+        </div>
+        <div class="contenedor">
+            <textarea id="htmlPanel" class="panel">Hola a todos</textarea>
+            <textarea id="cssPanel" class="panel oculto">p{color:green;}</textarea>
+            <textarea id="jsPanel" class="panel oculto">document.getElementById("parrafo").innerHTML = "Holis";</textarea>
+            <iframe id="outputPanel" class="panel"></iframe>
+        
+        </div>
+        
+        <script type="text/javascript">
+            function actualizarSalida()
+            {
+                $("iframe").contents().find("html").html("<html><head><style type='text/css'>"+$("#cssPanel").val()+"</style></head><body>"+$("#htmlPanel").val()+"</body></html>");
+                document.getElementById("#outputPanel").contentWindow.eval($("#jsPanel").val());
+            }
+            
+            $(".botones").hover(function(){
+                $(this).addClass("botonMarcado");
+                //otra forma que sale en las pag de jq hover
+                //$(this).css("backgroundColor", "#E4E4E4");
+                }, function(){
+                $(this).removeClass("botonMarcado");
+                //otra forma
+                //$(this).css("backgroundColor", "rgb(237, 237, 237)");
+            });
+            
+            $(".botones").click(function(){
+                //marca y desmarca con celeste cuando hago click y desclick
+                $(this).toggleClass("activo");
+                $(this).removeClass("botonMarcado");
+                //me permite ver lo que tiene para mostrar o hacer cada panel cuando lo selecciono. Obtiene cual esta seleccionado y divide segun la cantidad, la totalidad de la pagina dandole a cada uno su espacio
+                var panelId = $(this).attr("id") + "Panel";
+                $("#"+panelId).toggleClass("oculto");
+                //$("#"+panelId).toggle();
+                
+                var numeroPanelesActivos=4 - $('.oculto').length;
+                $(".panel").width(($(window).width()/numeroPanelesActivos)-10);
+            });
+            
+            //para que la altura de la linea del medio se adapte al tamaño de la  pagina
+            $(".panel").height($(window).height()-$(".barraPrincipal").height());
+            
+            //para que el ancho de la mitad sea igual de ambos lados
+            $(".panel").width($(window).width()/2);
+            
+            actualizarSalida();
+            
+           $("textarea").on('change keyup paste',function(){
+               actualizarSalida();
+           }); 
+            
+            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,96 @@
+<html>
+<head>
+    
+    <meta charset="utf-8">
+    <title>JQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+    <style type="text/css">
+        .circulo
+        {
+            border-radius: 50%;
+            background-color: antiquewhite;
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+        }
+        
+        .parrafoOculto
+        {
+            display: none;
+        }
+        
+    </style>
+</head>
+    
+<body>
+    
+    <div class="circulo"></div>
+    <p>Este parrafo desaparecera </p>
+    <button class="desaparecer">Desaparecer</button>
+    
+    <p class="parrafoOculto">Este parrafo estaba oculto </p>
+    <button class="aparecer">Aparecer</button>
+    
+    <br><br>
+    <p class="parrafo">Este parrafo aparecera y desaparecera </p>
+    <button class="fadeInOut">Desaparecer/Aparecer</button>
+    
+    <script type="text/javascript">
+        
+        $("div").click(function()
+                         {
+            $(this).fadeOut("slow");
+            //hace que desvanezca cualquiero obeto que este en un div cuando hago click. Le puedo asignar propiedades para desvanecer como slow para que lo haga lento
+            //con .hide desaparece pero rapido, como si pusiera display none
+        })
+        
+        $(".desaparecer").click(function()
+                         {
+            $("p").fadeOut("slow");
+        })
+        
+        //tmb puedo asignar una class o id al button y en vez de poner aqui "button" pongo ese nombre que asigne
+        
+        $(".aparecer").click(function()
+                         {
+            $(".parrafoOculto").fadeIn("slow");
+        })
+        
+        
+        //aparecer desaparecer
+        //$(".fadeInOut").click(function(){
+          //  if ($(".parrafo").css("display") == "none")
+            //    {
+              //      $(".parrafo").fadeIn();
+                //}
+            // else
+               // {
+                 //   $(".parrafo").fadeOut();  
+                // }
+        // });
+        
+        
+        //se puede hacer lo mismo que hice antes pero con una variable
+        
+        var mostrar = true;
+        
+        $(".fadeInOut").click(function(){
+        if (mostrar == true)
+            {
+                $(".parrafo").fadeOut(function(){
+                    mostrar = false;
+                })
+            }
+        else
+        {
+            $(".parrafo").fadeIn(function(){
+                    mostrar = true;
+                })
+        }
+    })
+                              
+    </script>
+
+</body>
+</html>

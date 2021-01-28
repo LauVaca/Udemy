@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jQuery</title>
+        <script src="jquery-ui/jquery-ui.min.js">
+        </script>
+        <style type="text/css">
+            body {
+                font-family: helvetica, sans-serif;
+                font-size:150%;
+            }
+            input {
+                height: 40px;
+                padding: 5px 5px 12px 5px;
+                font-size:25px;
+                border-radius:5px;
+                border: 1px solid grey;
+                width:320px;
+            }
+            label {
+                position:relative;
+                top:5px;
+                width:220px;
+                float:left;
+            }
+            #contenedor
+            {
+                width: 550px;
+                margin: 0 auto;
+            }
+            .elemento-formulario
+            {
+                margin-bottom: 10px;
+            }
+            #botonEnviar
+            {
+                width:200px;
+                margin-left:220px;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div id="contenedor">
+            <div class="elemento-formulario">
+                <!-- Email -->
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email" placeholder="Ej. nombre@dominio.com">
+            </div>
+            <div class="elemento-formulario">
+                <!-- Teléfono -->
+                <label for="telefono">Teléfono</label>
+                <input type="text" name="telefono" id="telefono" placeholder="Ej. 0123456789">
+            </div>
+            <div class="elemento-formulario">
+                <!-- Password -->
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password">
+            </div>
+            <div class="elemento-formulario">
+                <!-- Confirmar password -->
+                <label for="confirmarPass">Confirmar password</label>
+                <input type="text" name="confirmarPass" id="confirmarPass">
+            </div>
+            <div class="elemento-formulario">
+                <input type="submit" id="botonEnviar" value="Darse de alta">
+            </div>
+        </div>
+        <script type="text/javascript">
+            
+        </script>
+    </body>
+</html>

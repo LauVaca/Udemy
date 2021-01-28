@@ -1,0 +1,103 @@
+<html>
+<head>
+    
+    <meta charset="utf-8">
+    <title>JQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+    <style type="text/css">
+        .circulo
+        {
+            border-radius: 50%;
+            background-color: antiquewhite;
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+        }
+        .circulo2
+        {
+            border-radius: 50%;
+            background-color: antiquewhite;
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+        }
+        .cuadrado
+            {
+                background-color: violet;
+                width: 100px;
+                height: 100px;
+                margin:10px;
+            }
+        .cuadrado2
+            {
+                background-color: violet;
+                width: 100px;
+                height: 100px;
+                margin:10px;
+            }
+    </style>
+</head>
+    
+<body>
+    <div class="circulo"></div>
+    <div class="circulo2"></div>
+    <div class="cuadrado"></div>
+    <div class="cuadrado2"></div>
+    
+    
+    <script type="text/javascript">
+        $(".circulo").click(function()
+                         {
+            $(".circulo").css("height","200px");
+            $(".circulo").css("width","200px");
+            //la primer , me indica el nombre de la propiedad a cambiar. la segunda , indica el nuevo valor que le asigno
+        })
+        
+        $(".circulo2").click(function()
+                         {
+            $(".circulo2").css("display","none");
+            //para la etiqueta .circulo2 asigno "display" que es la propiedad de mostrar y con el none como nuevo valor hago que desaparezca
+        })        
+        
+        $(".cuadrado").click(function()
+                         {
+            $(".cuadrado").css("background-color","hotpink");
+            
+            //la primer , me indica el nombre de la propiedad a cambiar. la segunda , indica el nuevo valor que le asigno
+        })
+        
+        $(".cuadrado2").click(function()
+                         {
+            alert($(".cuadrado2").css("background-color"));
+            
+            //me muestra el codigo del color que estoy usando, o de cualquier propiedad que defina
+        })
+        
+        $("div").click(function()
+                         {
+            $(this).css("display","none");
+            //con el this, el elemento que toque desaparecera, mientras este contenido en un div
+        })
+        
+        $("div").click(function()
+                         {
+            if ($(this).attr("class") == ("circulo" || "circulo2"))
+                {
+                    alert("Esto es un circulo");
+                    // en el caso de que quiera validar el cuadrado2 supongo que hago otro if porque no me funciona con el OR
+                }
+            else
+                {
+                    alert("Esto es un cuadrado");
+                }
+                          
+            
+            //me muestra un mensaje con el tipo de forma que es, definida en el class o en el id con "id"
+        })
+        
+        
+    </script>
+
+</body>
+</html>

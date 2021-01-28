@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pedido</title>
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="container-fluid contenedor-total">
+        <div class="row contenedorHero container-fluid">
+            <nav class="container-fluid">
+                <div class="barraNav">
+                    <a class="texto-nav" href="/"><b>Inicio</b></a>
+                    <a class="texto-nav" href="/locales"><b>Locales</b></a>
+                </div>
+            </nav>
+            <div class="col-md-12">
+                <h2 class="direccion">Tu pedido</h2>
+            </div>
+        </div>
+    </div>
+    <form method="post" action="/resumen" name="form1">
+        <div class="container">
+            <div class="row">
+
+                
+                <div class="col-md-8 order-md-1">
+                    <hr class="mb-4">
+                    <h4 class="mb-3">Entrega</h4>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" class="custom-control-input" id="AntesPosible" name="radio" value="1">
+                        <label class="custom-control-label" for="AntesPosible">Lo antes Posible</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" class="custom-control-input" id="save-info" name="radio" value="2" onclick="habilitar(this)">
+                        <label class="custom-control-label" for="save-info">Programar Entrega</label>
+                        <input type="text" class="form-control" name="save-info" placeholder="12:12" disabled="true">
+                    </div>
+                    <hr class="mb-4">
+
+                    <!--PAGO-->
+                    <h4 class="mb-3">Pago</h4>
+                    <div class="d-block my-3">
+                        <!--EFECTIVO-->
+                        <div class="custom-control custom-radio">
+
+                            <input id="efectivo" name="paymentMethod" value="capaEf" type="radio" class="custom-control-input" data-toggle="collapse" data-target="#collapseEfectivo" aria-expanded="false" aria-controls="collapseExample" onclick="mostrar(this.value)">
+                            <label class="custom-control-label" for="efectivo">Efectivo</label>
+                        </div>
+
+                        <div class="collapse" id="collapseEfectivo">
+                            <div id="capaEf" style="display: none">
+                                <div class="card card-body">
+                                    <hr class="mb-4">
+                                    <div class="row">
+                                        <div class="col-md-3 mb-3">
+                                            <label for="cc-name">Con cuanto vas a pagar?</label>
+                                            <input type="text" class="form-control" name="montoDePago" placeholder="">
+                                            <small class="text-muted">Monto</small>
+                                            <div class="invalid-feedback">
+                                                Monto de pago es requerido
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <!--TARJETA-->
+                        <div class="custom-control custom-radio">
+                            <input id="credito" name="paymentMethod" value="capaTarj" type="radio" class="custom-control-input" data-toggle="collapse" data-target="#collapseTarjeta" aria-expanded="true" aria-controls="collapseExample" onclick="mostrar(this.value)">
+                            <label class="custom-control-label" for="credito">Tarjeta de Credito</label>
+                        </div>
+
+                        <div class="collapse" id="collapseTarjeta">
+                            <div id="capaTarj" style="display: none">
+                                <div class="card card-body">
+                                    <hr class="mb-4">
+                                    <div class="row">
+
+                                        <div class="col-md-6 mb-3">
+                                            <label for="cc-name">Nombre de Tarjeta</label>
+                                            <input type="text" class="form-control" id="cc-name" placeholder="">
+                                            <small class="text-muted">Nombre completo como figura en la Tarjeta</small>
+                                            <div class="invalid-feedback">
+                                                Nombre de la Tarjeta es requerido
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="cc-number">Numero de Tarjeta</label>
+                                            <input type="text" class="form-control" name="tarjeta" placeholder="XXXX-XXXX-XXXX-XXXX">
+                                            <div class="invalid-feedback">
+                                                El numero de Tarjeta es requerido
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3 mb-3">
+                                            <label for="cc-expiration">Fecha de Vecimiento</label>
+                                            <input type="text" class="form-control" id="cc-expiration" placeholder="">
+                                            <div class="invalid-feedback">
+                                                La Fecha de vencimiento de la Tarjeta es requirida
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 mb-3">
+                                            <label for="cc-expiration">Codigo de Seguridad</label>
+                                            <input type="text" class="form-control" id="cc-cvv" placeholder="">
+                                            <div class="invalid-feedback">
+                                                El codigo de seguridad es requiro
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--BOTON-->
+                        <hr class="mb-4">
+                        <input type="submit" value="Finalizar Pedido" class="btn btn-primary btn-lg">
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </form>
+    <script>
+        var capas = ["capaEf", "capaTarj"];
+
+        function mostrar(capa) {
+            for (i = 0, total = capas.length; i < total; i++)
+                document.getElementById(capas[i]).style.display = (capas[i] == capa) ? "block" : "none";
+        }
+
+        function habilitar(e) {
+            // los deshabilitamos todos
+            var inputs = document.querySelector("input[type=text]");
+            for (var i = 0; i < inputs.length; i++) {
+                inputs[i].disabled = true;
+            }
+
+            // habilitamos el seleccionado
+            document.getElementsByName(e.id)[0].disabled = false;
+        }
+        
+//        function habilitar(e) {
+//            // los deshabilitamos todos
+//            var inputs = document.querySelectorAll("input[type=text]");
+//            for (var i = 0; i < inputs.length; i++) {
+//                inputs[i].disabled = true;
+//            }
+//
+//            // habilitamos el seleccionado
+//            document.getElementsByName(e.id)[0].disabled = false;
+//        }
+
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="scripts/pedido.js"></script>
+
+
+</body>
+
+</html>

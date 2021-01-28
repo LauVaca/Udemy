@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jQuery</title>
+        <script src="jquery-ui/jquery-ui.min.js">
+        </script>
+        <script src="jquery-ui/external/jquery/jquery.js">
+        </script>
+        <script src="jquery-ui/jquery-ui.js"></script>
+        <link rel="stylesheet" href="jquery-ui/jquery-ui.css">
+        <style type="text/css">
+            #acordeon {
+                width:500px;
+                background-color:darkgrey;
+            }    
+        </style>
+    </head>
+    
+    <body>
+        <div id="acordeon">
+            <h3>Sección 1</h3>
+            <p>Holis que tal</p>
+            <h3>Sección 2</h3>
+            <p>YO SOY LAU</p>
+            <h3>Sección 3</h3>
+            <p>No soy pato</p>
+            <h3>Sección 4</h3>
+            <p>Hola soy Lau</p>
+        </div>
+        <div id="listaOrdenable">
+            <ul id="ordenable">
+                <li>hola</li>
+                <li>yo</li>
+                <li>soy</li>
+                <li>Lau</li>
+            </ul>
+        </div>
+        <script type="text/javascript">
+            $("#acordeon").accordion();
+            $("#ordenable").sortable();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,25 @@
+<html>
+<head>
+    
+    <meta charset="utf-8">
+    <title>Expresiones Regulares</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+    
+</head>
+    
+<body>
+    
+    <script type="text/javascript">
+        var texto="Expresiones regulares";
+        var regex=/e/g;
+        //el match busca si hay alguna expresion que sea reg
+        //osea que ve si lo que contiene la var texto es una expresion regular declarada en regex
+        //match es sensible a las mayus. Para que no lo sea se usa un flag /REG/i
+        //para que cuente cuantas veces por ejemplo aparece la letra e uso un flag /e/g
+        var resultado=texto.match(regex);
+        alert(resultado);
+    
+    </script>
+</body>
+</html>

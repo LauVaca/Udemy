@@ -1,0 +1,56 @@
+<html>
+<head>
+    
+    <meta charset="utf-8">
+    <title> Javascript </title>
+    
+</head>
+    
+<body>
+    <p id="texto"> Ejemplo de JS </p>
+    
+    <p id="texto2"> Soy ...</p>
+    <button id="Boton1"> Cambiar texto </button>
+    
+    <p id="texto3"> Me llamo ... </p>
+    <button id="Boton2"> Cambiar texto </button>
+    
+    <p id="parrafoVacio"> </p>
+    <button id="crear"> Crear un parrafo </button>
+    
+    <p id="parrafoEstilo"> Parrafo </p>
+    <button id="estilo"> Modificar parrafo</button>
+    
+    
+    <script type="text/javascript">
+        //document=obtiene el documento html, getElement.. busca en el documento por id=texto y inner cambia ese texto del id por holalaurix
+        /*para comentarios de muchas lineas */
+        document.getElementById("texto").innerHTML = "Holis";
+        document.getElementById("Boton1").onclick = 
+            function()
+                {
+                    document.getElementById("texto2").innerHTML = "UNA CRACK";
+                }
+        document.getElementById("Boton2").onclick = 
+            function()
+                {
+                    document.getElementById("texto3").innerHTML = document.getElementById("texto3").innerHTML + "Lau";
+                }
+        document.getElementById("crear").onclick =
+            function ()
+                {
+                    document.getElementById("parrafoVacio").innerHTML = "Se acaba de crear un nuevo parrafo";
+                }
+        
+        document.getElementById("estilo").onclick = 
+            function ()
+            {
+                document.getElementById("parrafoEstilo").style.color = "red";
+                document.getElementById("parrafoEstilo").style.fontSize = "50px";
+                document.getElementById("parrafoEstilo").style.fontWeight = "900";
+            }
+    </script>
+    
+</body>
+
+</html>
